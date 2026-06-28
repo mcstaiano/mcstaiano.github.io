@@ -1,509 +1,998 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Maria Carmen Staiano — MT & Language Technologies Researcher</title>
-  <meta name="description" content="PhD Candidate in Machine Translation & Language Technologies at the University of Macerata, Italy."/>
-  <link rel="preconnect" href="https://fonts.googleapis.com"/>
-  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet"/>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Maria Carmen Staiano â€” MT & Language Technologies Researcher</title>
+  <meta name="description" content="PhD Candidate in Machine Translation & Language Technologies at the University of Macerata, Italy." />
+
+  <!-- Reference-style typography: Fredoka rounded display + Courier Prime mono accents -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Fredoka:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
   <style>
     :root {
-      --bg: #1a1a2e;
-      --surface: #ffffff;
-      --text: #1a1a1a;
-      --muted: #555;
-      --accent: #e91e8c;
-      --accent2: #3b5bdb;
-      --tag-pill: rgba(59,91,219,0.18);
-      --tag-border: rgba(59,91,219,0.55);
-      --tag-text: #fff;
-      --nav-bg: rgba(20,20,40,0.92);
-      --border: #e0e0e0;
-      --card-bg: rgba(255,255,255,0.13);
-      --card-border: rgba(255,255,255,0.25);
-      --sans: 'Nunito', system-ui, sans-serif;
-      --sans2: 'Nunito Sans', system-ui, sans-serif;
+      --bg: #f8f4ec;
+      --surface: #fffaf3;
+      --surface-2: #f0e8dd;
+      --text: #20201d;
+      --muted: #6f6a63;
+      --line: rgba(42, 39, 34, 0.14);
+      --accent: #ff1c8d;
+      --accent-2: #925062;
+      --accent-soft: rgba(146, 80, 98, 0.15);
+      --nav-bg: rgba(73, 68, 68, 0.90);
+      --nav-text: rgba(255, 255, 255, 0.82);
+      --hero-glass: rgba(70, 73, 56, 0.72);
+      --hero-border: rgba(255, 255, 255, 0.22);
+      --hero-text: #fffdf8;
+      --hero-muted: rgba(255, 253, 248, 0.84);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+      --radius-lg: 30px;
+      --radius-md: 18px;
+      --sans: 'Fredoka', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif: Georgia, 'Times New Roman', serif;
+      --mono: 'Courier Prime', 'Courier New', monospace;
+
+      /* Replace this URL with your own hero image if needed. */
+      --hero-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg/1280px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project_-_edited.jpg');
     }
-    [data-theme="light"] {
-      --bg: #f0f4ff;
-      --nav-bg: rgba(240,244,255,0.94);
-      --card-bg: rgba(255,255,255,0.55);
-      --card-border: rgba(255,255,255,0.7);
-      --tag-text: #fff;
+
+    [data-theme="dark"] {
+      --bg: #10100f;
+      --surface: #181817;
+      --surface-2: #22211e;
+      --text: #f0ece5;
+      --muted: #aaa39a;
+      --line: rgba(255, 255, 255, 0.13);
+      --accent-soft: rgba(255, 28, 141, 0.11);
+      --nav-bg: rgba(52, 48, 48, 0.92);
+      --hero-glass: rgba(44, 48, 38, 0.74);
     }
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    *,
+    *::before,
+    *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
     html { scroll-behavior: smooth; }
-    body { font-family: var(--sans2); background: var(--bg); color: var(--text); font-size: 16px; line-height: 1.7; transition: background .3s, color .3s; }
-    a { color: var(--accent2); text-decoration: none; }
+
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--text);
+      font-size: 16px;
+      line-height: 1.72;
+      transition: background .25s ease, color .25s ease;
+    }
+
+    a { color: var(--accent-2); text-decoration: none; font-weight: 700; }
     a:hover { text-decoration: underline; }
 
-    /* ── NAV ── */
-    nav {
-      position: fixed; top: 0; left: 0; right: 0; z-index: 200;
-      background: var(--nav-bg); backdrop-filter: blur(14px);
-      display: flex; align-items: center; justify-content: center;
-      gap: 2.5rem; padding: .8rem 2rem;
+    /* ===== Reference-style fixed rounded navigation ===== */
+    .top-nav {
+      position: fixed;
+      top: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      width: min(88vw, 1120px);
+      min-height: 56px;
+      padding: 0 24px;
+      border-radius: 999px;
+      background: var(--nav-bg);
+      border: 1px solid rgba(255,255,255,.13);
+      box-shadow: 0 12px 34px rgba(0,0,0,.18);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
     }
-    nav a {
-      font-family: var(--sans); font-size: .8rem; font-weight: 600;
-      letter-spacing: .06em; color: rgba(255,255,255,.75);
-      transition: color .2s; text-transform: lowercase;
-    }
-    nav a:hover { color: #fff; text-decoration: none; }
-    .tbtn {
-      position: absolute; right: 1.5rem;
-      background: rgba(255,255,255,.15); border: 1px solid rgba(255,255,255,.3);
-      border-radius: 20px; padding: .25rem .75rem;
-      font-size: .72rem; font-family: var(--sans); font-weight: 600;
-      cursor: pointer; color: rgba(255,255,255,.8);
-      transition: background .2s;
-    }
-    .tbtn:hover { background: rgba(255,255,255,.25); }
 
-    /* ── HERO ── */
-    #hero {
+    .top-nav a,
+    .theme-btn {
+      font-family: var(--mono);
+      font-size: 13px;
+      line-height: 1;
+      letter-spacing: .075em;
+      text-transform: lowercase;
+      color: var(--nav-text);
+      font-weight: 700;
+    }
+
+    .top-nav a:hover { color: #fff; text-decoration: none; }
+
+    .theme-btn {
+      border: 1px solid rgba(255,255,255,.28);
+      background: rgba(255,255,255,.10);
+      border-radius: 999px;
+      padding: 6px 13px;
+      cursor: pointer;
+      transition: background .2s ease, color .2s ease;
+    }
+
+    .theme-btn:hover { background: rgba(255,255,255,.17); color: #fff; }
+
+    /* ===== Hero exactly closer to the screenshot: image background + central glass card ===== */
+    .hero {
+      position: relative;
       min-height: 100vh;
-      background-image: url('https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Macerata_crop.jpg/1280px-Macerata_crop.jpg');
-      background-size: cover; background-position: center;
-      display: flex; align-items: center; justify-content: center;
-      padding: 6rem 2rem 3rem; position: relative;
-    }
-    #hero::before {
-      content: ''; position: absolute; inset: 0;
-      background: linear-gradient(135deg, rgba(10,10,30,.55) 0%, rgba(10,10,50,.4) 100%);
-    }
-    .hcard {
-      position: relative; z-index: 2;
-      background: var(--card-bg);
-      border: 1px solid var(--card-border);
-      backdrop-filter: blur(18px);
-      border-radius: 24px;
-      padding: 2.8rem 3rem 2.2rem;
-      max-width: 760px; width: 100%;
+      padding: 110px 24px 74px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       text-align: center;
+      isolation: isolate;
+      background: #111;
     }
-    .hgreet {
-      font-family: var(--sans); font-size: .82rem; font-weight: 700;
-      letter-spacing: .22em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .9rem;
-    }
-    .hname {
-      font-family: var(--sans); font-size: clamp(3rem, 7vw, 5.2rem);
-      font-weight: 900; color: #ffffff; line-height: 1.05;
-      margin-bottom: .65rem; letter-spacing: -.01em;
-    }
-    .hrole {
-      font-family: var(--sans); font-size: 1.05rem; font-weight: 600;
-      color: rgba(255,255,255,.82); margin-bottom: 1.3rem;
-    }
-    .hrole a { color: #fff; font-weight: 800; background: var(--accent2); border-radius: 6px; padding: 0 .35rem; }
-    .hrole a:hover { text-decoration: none; opacity: .9; }
-    .htags { display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.1rem; }
-    .htag {
-      background: var(--tag-pill); border: 1.5px solid var(--tag-border);
-      color: var(--tag-text); border-radius: 30px;
-      padding: .32rem 1.1rem; font-family: var(--sans);
-      font-size: .82rem; font-weight: 700; letter-spacing: .02em;
-    }
-    .hdivider { border: none; border-top: 1px solid rgba(255,255,255,.2); margin: 1rem 0; }
-    .hsubtitle {
-      font-family: var(--sans); font-size: .88rem; font-style: italic;
-      color: rgba(255,255,255,.65); margin-bottom: .3rem;
-    }
-    .hphoto-credit { font-size: .72rem; color: rgba(255,255,255,.45); margin-bottom: 1.3rem; }
-    .hsoc {
-      display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap;
-    }
-    .hsoc a {
-      width: 42px; height: 42px; border-radius: 50%;
-      background: rgba(30,30,60,.75); border: 1.5px solid rgba(255,255,255,.2);
-      display: flex; align-items: center; justify-content: center;
-      color: #fff; transition: background .2s, transform .15s;
-    }
-    .hsoc a:hover { background: var(--accent); transform: scale(1.08); text-decoration: none; }
-    .hsoc svg { width: 18px; height: 18px; fill: currentColor; }
 
-    /* ── SECTIONS ── */
-    section { padding: 5rem 2rem; }
-    .wrap { max-width: 880px; margin: 0 auto; }
-    .sec-bg-white { background: #fff; }
-    .sec-bg-light { background: #f7f9ff; }
-    .eyebrow {
-      font-family: var(--sans); font-size: .7rem; font-weight: 700;
-      letter-spacing: .22em; text-transform: uppercase;
-      color: var(--accent); margin-bottom: .35rem;
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      background-image: var(--hero-image);
+      background-size: cover;
+      background-position: center;
+      filter: saturate(.78) contrast(.98) brightness(.82);
+      transform: scale(1.02);
     }
-    .sec-title {
-      font-family: var(--sans); font-size: clamp(1.8rem, 4vw, 2.6rem);
-      font-weight: 800; color: #1a1a1a; margin-bottom: 1.8rem; line-height: 1.15;
-    }
-    .rule { border: none; border-top: 2px solid #f0f0f0; margin-bottom: 2rem; }
 
-    /* ── ABOUT ── */
-    #about { background: #fff; }
-    .agrid { display: grid; grid-template-columns: 220px 1fr; gap: 3.5rem; align-items: start; }
-    .pp {
-      width: 100%; border-radius: 16px; overflow: hidden;
-      border: 3px solid #f0f0f0; aspect-ratio: 3/4;
-      background: #f5f5f5;
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        radial-gradient(circle at 50% 38%, rgba(255,255,255,.05), transparent 34%),
+        linear-gradient(to bottom, rgba(12,12,12,.44), rgba(6,8,6,.56));
     }
-    .pp img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
-    .abio { font-size: 1rem; line-height: 1.85; margin-bottom: 1.4rem; color: #333; }
-    .subsec {
-      font-family: var(--sans); font-size: .68rem; font-weight: 700;
-      letter-spacing: .2em; text-transform: uppercase;
-      color: var(--accent); margin: 1.5rem 0 .6rem;
+
+    .hero-inner {
+      width: min(100%, 1090px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 48px;
     }
-    .tags { display: flex; flex-wrap: wrap; gap: .4rem; margin-bottom: 1rem; }
+
+    .hero-card {
+      width: min(100%, 940px);
+      padding: clamp(38px, 6vw, 58px) clamp(28px, 7vw, 72px) 38px;
+      border-radius: var(--radius-lg);
+      background: var(--hero-glass);
+      border: 1px solid var(--hero-border);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      color: var(--hero-text);
+    }
+
+    .hero-greeting {
+      font-family: var(--mono);
+      font-size: clamp(16px, 2.3vw, 25px);
+      line-height: 1.1;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .hero-title {
+      font-size: clamp(54px, 9.2vw, 100px);
+      line-height: .92;
+      letter-spacing: -.045em;
+      color: #fffdf8;
+      font-weight: 700;
+      text-shadow: 0 7px 24px rgba(0,0,0,.22);
+      margin-bottom: 30px;
+    }
+
+    .hero-role {
+      font-size: clamp(22px, 3vw, 30px);
+      line-height: 1.18;
+      color: var(--hero-text);
+      font-weight: 700;
+      margin-bottom: 28px;
+    }
+
+    .hero-tags {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 28px;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 54px;
+      padding: 0 22px;
+      border-radius: 999px;
+      background: rgba(146, 80, 98, .82);
+      border: 1px solid rgba(255, 255, 255, .24);
+      box-shadow: inset 0 1px 0 rgba(255,255,255,.08);
+      color: #fffaf5;
+      font-size: 18px;
+      letter-spacing: .065em;
+      font-family: var(--sans);
+      font-weight: 700;
+    }
+
+    .hero-line {
+      height: 1px;
+      width: 100%;
+      background: rgba(255,255,255,.15);
+      margin: 8px 0 20px;
+    }
+
+    .hero-quote {
+      font-family: var(--serif);
+      font-size: clamp(20px, 2.4vw, 25px);
+      font-style: italic;
+      color: rgba(255,253,248,.94);
+      margin-bottom: 14px;
+      line-height: 1.35;
+    }
+
+    .hero-caption {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: rgba(255,253,248,.82);
+      letter-spacing: .025em;
+    }
+
+    .social-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: clamp(22px, 5vw, 52px);
+    }
+
+    .social-row a {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      color: rgba(255,255,255,.92);
+      background: rgba(16, 22, 33, .66);
+      border: 1px solid rgba(255,255,255,.14);
+      box-shadow: 0 12px 25px rgba(0,0,0,.23), inset 0 1px 0 rgba(255,255,255,.08);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform .2s ease, background .2s ease, color .2s ease;
+    }
+
+    .social-row a:hover {
+      transform: translateY(-4px);
+      color: #fff;
+      background: rgba(16, 22, 33, .88);
+      text-decoration: none;
+    }
+
+    .social-row svg { width: 24px; height: 24px; fill: currentColor; }
+
+    /* ===== Shared content sections ===== */
+    main { background: var(--bg); }
+
+    section.content-section {
+      padding: clamp(72px, 9vw, 105px) 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .wrap { width: min(100%, 920px); margin: 0 auto; }
+
+    .section-kicker {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .16em;
+      text-transform: lowercase;
+      color: var(--accent);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .section-title {
+      font-size: clamp(36px, 6vw, 60px);
+      line-height: .98;
+      letter-spacing: -.055em;
+      font-weight: 900;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    .soft-line {
+      border: 0;
+      border-top: 1px solid var(--line);
+      margin-bottom: 34px;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 230px 1fr;
+      gap: 46px;
+      align-items: start;
+    }
+
+    .profile-photo {
+      min-height: 290px;
+      border-radius: 24px;
+      background: linear-gradient(145deg, var(--surface-2), var(--surface));
+      border: 1px dashed var(--line);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      color: var(--muted);
+      text-align: center;
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .profile-photo svg { width: 34px; height: 34px; opacity: .55; }
+
+    .lead {
+      font-size: 20px;
+      line-height: 1.76;
+      font-weight: 600;
+      color: var(--text);
+      margin-bottom: 18px;
+    }
+
+    .body-text {
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.84;
+      margin-bottom: 16px;
+    }
+
+    .mini-heading {
+      font-family: var(--mono);
+      font-size: 13px;
+      letter-spacing: .16em;
+      color: var(--accent);
+      text-transform: lowercase;
+      font-weight: 700;
+      margin: 28px 0 12px;
+    }
+
+    .tag-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 16px 0 22px;
+    }
+
     .tag {
-      background: #f0f4ff; border: 1.5px solid #c5d0ff;
-      border-radius: 20px; padding: .25rem .8rem;
-      font-family: var(--sans); font-size: .75rem; font-weight: 700;
-      color: var(--accent2);
+      border-radius: 999px;
+      padding: 7px 13px;
+      background: var(--accent-soft);
+      border: 1px solid rgba(146, 80, 98, .24);
+      color: var(--text);
+      font-family: var(--mono);
+      font-weight: 700;
+      font-size: 13px;
     }
-    .blist { list-style: none; display: flex; flex-direction: column; gap: .45rem; margin-bottom: 1rem; }
-    .blist li { display: flex; align-items: flex-start; gap: .55rem; font-size: .92rem; color: #555; }
-    .blist li::before { content: '—'; color: var(--accent); flex-shrink: 0; }
-    .blist li a { color: #333; font-weight: 600; }
-    .blist li a:hover { color: var(--accent); }
-    .cv-btn {
-      display: inline-flex; align-items: center; gap: .5rem;
-      margin-top: 1.3rem; background: var(--accent2);
-      border-radius: 10px; padding: .55rem 1.3rem;
-      font-family: var(--sans); font-size: .85rem; font-weight: 700;
-      color: #fff; transition: opacity .2s; border: none; cursor: pointer;
-    }
-    .cv-btn:hover { opacity: .88; text-decoration: none; }
 
-    /* ── NEWS ── */
-    #news { background: #f7f9ff; border-top: 1px solid #eee; border-bottom: 1px solid #eee; }
-    .year-head {
-      font-family: var(--sans); font-size: 1.05rem; font-weight: 800;
-      color: #aaa; padding: 1.4rem 0 .5rem;
-      border-bottom: 1.5px solid #eee; margin-bottom: 0;
+    .bullet-list {
+      list-style: none;
+      display: grid;
+      gap: 10px;
+      margin: 16px 0;
     }
-    .ni { display: flex; gap: .9rem; padding: .8rem 0; border-bottom: 1px solid #eee; align-items: flex-start; }
-    .ndot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); flex-shrink: 0; margin-top: .6rem; }
-    .ndot.hollow { background: transparent; border: 2px solid var(--accent); }
-    .ndate { font-family: var(--sans); font-size: .78rem; font-weight: 700; color: #aaa; min-width: 105px; flex-shrink: 0; padding-top: .06rem; }
-    .nbody { font-size: .9rem; color: #555; line-height: 1.7; }
-    .nbody strong { color: #1a1a1a; font-weight: 700; }
 
-    /* ── RESEARCH ── */
-    #research { background: #fff; }
-    .pub { border-bottom: 1.5px solid #f0f0f0; padding: 1.2rem 0; }
-    .pub:first-of-type { border-top: 1.5px solid #f0f0f0; }
-    .pub-title { font-family: var(--sans); font-weight: 700; font-size: .95rem; color: #1a1a1a; margin-bottom: .2rem; line-height: 1.5; }
-    .pub-authors { font-size: .82rem; color: #888; margin-bottom: .4rem; font-style: italic; }
-    .pub-meta { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; }
-    .pub-venue { font-family: var(--sans); font-size: .78rem; color: var(--accent); font-weight: 700; }
+    .bullet-list li {
+      display: grid;
+      grid-template-columns: 18px 1fr;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .bullet-list li::before {
+      content: 'â—†';
+      color: var(--accent);
+      font-size: 10px;
+      transform: translateY(5px);
+    }
+
+    .button-link {
+      display: inline-flex;
+      margin-top: 18px;
+      border-radius: 999px;
+      padding: 10px 18px;
+      background: var(--text);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      transition: transform .2s ease, opacity .2s ease;
+    }
+
+    .button-link:hover { transform: translateY(-2px); opacity: .9; text-decoration: none; }
+
+    /* ===== News timeline ===== */
+    #news { background: var(--surface); }
+
+    .year-title {
+      font-size: 25px;
+      font-weight: 900;
+      letter-spacing: -.03em;
+      margin: 28px 0 8px;
+      color: var(--text);
+    }
+
+    .news-item {
+      display: grid;
+      grid-template-columns: 115px 1fr;
+      gap: 22px;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+      position: relative;
+    }
+
+    .news-date {
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--accent-2);
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    .news-date::before {
+      content: '';
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 7px;
+      flex: none;
+    }
+
+    .news-date.future::before { background: transparent; border: 2px solid var(--accent); }
+
+    .news-body { color: var(--muted); font-size: 17px; line-height: 1.75; }
+    .news-body strong { color: var(--text); font-weight: 900; }
+
+    /* ===== Research cards ===== */
+    .publication {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      padding: 24px 26px;
+      margin-bottom: 16px;
+      box-shadow: 0 9px 24px rgba(0,0,0,.035);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .publication:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 20px 48px rgba(0,0,0,.08);
+    }
+
+    .pub-title {
+      font-size: 20px;
+      line-height: 1.38;
+      font-weight: 900;
+      letter-spacing: -.025em;
+      margin-bottom: 7px;
+    }
+
+    .pub-author { color: var(--muted); margin-bottom: 10px; }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--accent-2);
+      font-family: var(--mono);
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .pub-link {
-      display: inline-block; background: #f0f4ff; border: 1.5px solid #c5d0ff;
-      border-radius: 6px; padding: .12rem .55rem; font-family: var(--sans);
-      font-size: .7rem; font-weight: 700; color: var(--accent2);
-      transition: background .15s;
+      display: inline-flex;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      padding: 3px 9px;
+      background: var(--accent-soft);
+      color: var(--text);
     }
-    .pub-link:hover { background: #dde4ff; text-decoration: none; }
 
-    /* ── COMMUNITY ── */
-    #community { background: #f7f9ff; border-top: 1px solid #eee; }
-    .cquote {
-      font-family: var(--sans); font-size: clamp(1.2rem, 2.8vw, 1.65rem);
-      font-weight: 700; font-style: italic; color: #1a1a1a;
-      text-align: center; margin-bottom: .45rem; line-height: 1.4;
+    /* ===== Community carousel ===== */
+    #community { background: var(--surface); }
+
+    .community-quote {
+      font-family: var(--serif);
+      font-size: clamp(29px, 5vw, 46px);
+      line-height: 1.15;
+      font-style: italic;
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 10px;
     }
-    .cquote-attr { text-align: center; font-size: .82rem; color: #aaa; margin-bottom: 2rem; }
-    .cbody { font-size: .95rem; color: #555; line-height: 1.85; margin-bottom: .85rem; }
 
-    /* ── CAROUSEL ── */
-    .car { position: relative; border-radius: 16px; background: #eee; margin-top: 2rem; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,.08); }
-    .ctrack { display: flex; transition: transform .44s cubic-bezier(.4,0,.2,1); }
-    .cslide { min-width: 100%; display: flex; flex-direction: column; }
-    .cimgs { display: flex; gap: 3px; height: 220px; overflow: hidden; background: #ddd; }
-    .cimg { flex: 1; object-fit: cover; }
-    .cph { flex: 1; background: #e8e8e8; display: flex; align-items: center; justify-content: center; color: #bbb; font-size: .75rem; flex-direction: column; gap: .3rem; }
-    .cph svg { width: 22px; height: 22px; opacity: .4; }
-    .ccap { padding: .85rem 1.2rem; font-family: var(--sans); font-size: .85rem; font-weight: 700; color: #1a1a1a; background: #fff; border-top: 1px solid #eee; }
-    .cbtn { position: absolute; top: 92px; z-index: 10; background: rgba(0,0,0,.38); border: none; color: #fff; width: 34px; height: 34px; border-radius: 50%; cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background .2s; }
-    .cbtn:hover { background: rgba(0,0,0,.65); }
-    .cbtn.p { left: 10px; } .cbtn.n { right: 10px; }
-    .cdots { display: flex; justify-content: center; gap: .45rem; padding: .6rem 0 .3rem; background: #fff; }
-    .cd { width: 7px; height: 7px; border-radius: 50%; background: #ddd; cursor: pointer; border: none; transition: background .2s; }
-    .cd.on { background: var(--accent); }
-    .ccount { position: absolute; bottom: 46px; right: 12px; background: rgba(0,0,0,.4); color: #fff; font-size: .7rem; padding: .15rem .5rem; border-radius: 10px; }
-
-    /* ── FOOTER ── */
-    footer { border-top: 1px solid #e0e0e0; padding: 2rem; text-align: center; font-size: .8rem; color: #aaa; background: #fff; }
-    footer a { color: #aaa; }
-    footer a:hover { color: #333; }
-
-    @media (max-width: 680px) {
-      .hcard { padding: 2rem 1.5rem 1.8rem; border-radius: 18px; }
-      .hname { font-size: 2.6rem; }
-      nav { gap: 1.2rem; }
-      .agrid { grid-template-columns: 1fr; }
-      .pp { max-width: 200px; margin: 0 auto; }
-      .cimgs { height: 150px; }
-      .cbtn { top: 58px; }
+    .community-subtitle {
+      text-align: center;
+      font-family: var(--mono);
+      color: var(--muted);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 34px;
     }
-    @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+    .carousel {
+      position: relative;
+      overflow: hidden;
+      margin-top: 32px;
+      border-radius: 26px;
+      background: var(--surface-2);
+      border: 1px solid var(--line);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform .44s ease;
+    }
+
+    .carousel-slide { min-width: 100%; }
+
+    .carousel-images {
+      display: flex;
+      gap: 4px;
+      height: 235px;
+      background: var(--surface-2);
+    }
+
+    .photo-placeholder {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: linear-gradient(145deg, rgba(146,80,98,.11), rgba(255,255,255,.08));
+      color: var(--muted);
+      font-family: var(--mono);
+      font-size: 13px;
+    }
+
+    .photo-placeholder svg { width: 28px; height: 28px; opacity: .45; }
+
+    .carousel-caption {
+      padding: 18px 24px;
+      background: var(--surface);
+      border-top: 1px solid var(--line);
+      font-weight: 900;
+      color: var(--text);
+      letter-spacing: -.01em;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 95px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      border: 1px solid rgba(255,255,255,.22);
+      background: rgba(0,0,0,.48);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 5;
+      font-size: 26px;
+      line-height: 1;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .carousel-btn:hover { background: rgba(0,0,0,.72); transform: translateY(-1px); }
+    .carousel-btn.prev { left: 14px; }
+    .carousel-btn.next { right: 14px; }
+
+    .dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 0 4px;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(146,80,98,.28);
+      cursor: pointer;
+    }
+
+    .dot.active { background: var(--accent); }
+
+    .slide-count {
+      position: absolute;
+      right: 14px;
+      bottom: 52px;
+      background: rgba(0,0,0,.48);
+      color: #fff;
+      border-radius: 999px;
+      padding: 3px 9px;
+      font-family: var(--mono);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    footer {
+      background: var(--bg);
+      padding: 36px 24px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 14px;
+      font-family: var(--mono);
+    }
+
+    footer a { color: var(--muted); }
+    footer a:hover { color: var(--text); }
+
+    @media (max-width: 760px) {
+      .top-nav {
+        width: calc(100vw - 24px);
+        top: 12px;
+        gap: 15px;
+        min-height: 52px;
+        padding: 0 12px;
+      }
+
+      .top-nav a,
+      .theme-btn { font-size: 11px; letter-spacing: .04em; }
+
+      .theme-btn { padding: 6px 9px; }
+
+      .hero {
+        padding: 92px 16px 50px;
+        align-items: flex-start;
+      }
+
+      .hero-inner { gap: 30px; }
+      .hero-card { border-radius: 24px; }
+      .hero-title { letter-spacing: -.055em; }
+      .hero-tags { gap: 10px; }
+      .hero-tag { min-height: 42px; padding: 0 14px; font-size: 14px; }
+      .social-row a { width: 52px; height: 52px; }
+
+      .about-grid { grid-template-columns: 1fr; gap: 28px; }
+      .profile-photo { min-height: 220px; }
+      .news-item { grid-template-columns: 1fr; gap: 6px; }
+      .carousel-images { height: 160px; }
+      .carousel-btn { top: 60px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * { transition: none !important; scroll-behavior: auto !important; }
+    }
   </style>
 </head>
+
 <body>
+  <nav class="top-nav" aria-label="Primary navigation">
+    <a href="#about">about</a>
+    <a href="#news">news</a>
+    <a href="#research">research</a>
+    <a href="#community">community</a>
+    <button class="theme-btn" type="button" onclick="toggleTheme()">â˜¾ dark</button>
+  </nav>
 
-<!-- NAV -->
-<nav>
-  <a href="#about">about</a>
-  <a href="#news">news</a>
-  <a href="#research">research</a>
-  <a href="#community">community</a>
-  <button class="tbtn" onclick="toggleTheme()" id="tbtn">☽ dark</button>
-</nav>
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div class="hero-card">
+        <p class="hero-greeting">Welcome! Hi! Benvenuti!</p>
+        <h1 class="hero-title">I'm Maria Carmen Staiano</h1>
+        <p class="hero-role">MT PhD Student @ University of Macerata</p>
 
-<!-- HERO -->
-<section id="hero">
-  <div class="hcard">
-    <p class="hgreet">Ciao! &nbsp;·&nbsp; Hi! &nbsp;·&nbsp; Benvenuti!</p>
-    <h1 class="hname">I'm Maria Carmen Staiano</h1>
-    <p class="hrole">MT PhD Student @ <a href="https://www.unimc.it" target="_blank">University of Macerata</a></p>
-    <div class="htags">
-      <span class="htag">Machine Translation</span>
-      <span class="htag">NLP</span>
-      <span class="htag">Crisis Communication</span>
-      <span class="htag">LLMs</span>
-    </div>
-    <hr class="hdivider"/>
-    <p class="hsubtitle"><em>Staiano — Neapolitan roots, Italian heart, language technologies mind</em></p>
-    <p class="hphoto-credit">📸 Macerata, Italy — home of my PhD journey</p>
-    <div class="hsoc">
-      <a href="https://www.linkedin.com/in/maria-carmen-staiano/" target="_blank" rel="noopener" aria-label="LinkedIn">
-        <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
-      </a>
-      <a href="https://github.com/mcstaiano" target="_blank" rel="noopener" aria-label="GitHub">
-        <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
-      </a>
-      <a href="https://x.com/mc_staiano" target="_blank" rel="noopener" aria-label="Twitter/X">
-        <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
-      </a>
-      <a href="https://scholar.google.com/citations?user=0C0UXX4AAAAJ&hl=it" target="_blank" rel="noopener" aria-label="Google Scholar">
-        <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 12.817 14.978 12 12 12c-2.977 0-5.548.817-6.758 1.769zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
-      </a>
-      <a href="mailto:carmen-staiano@outlook.it" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="sec-bg-white">
-  <div class="wrap">
-    <p class="eyebrow">About</p>
-    <h2 class="sec-title">What you should know about me?</h2>
-    <hr class="rule"/>
-    <div class="agrid">
-      <div>
-        <div class="pp">
-          <img src="data:image/jpeg;base64,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" alt="Maria Carmen Staiano"/>
+        <div class="hero-tags" aria-label="Research interests">
+          <span class="hero-tag">MT</span>
+          <span class="hero-tag">NLP</span>
+          <span class="hero-tag">LLMs</span>
+          <span class="hero-tag">Crisis</span>
         </div>
+
+        <div class="hero-line" aria-hidden="true"></div>
+
+        <p class="hero-quote">Machine Translation and Language Technologies for high-stakes communication.</p>
+        <p class="hero-caption">â–£ Research focus: crisis communication, public health, and reliable language technologies.</p>
       </div>
-      <div>
-        <p class="abio">
-          Hello there! I'm Maria Carmen — researcher, language enthusiast, and passionate advocate
-          for making machine translation and language technologies work in the moments that matter most.
-          I believe in concrete actions and real-world impact: language tech should be accessible and
-          reliable for everyone, especially in crisis and healthcare situations.
-        </p>
-        <p class="abio">
-          I am currently pursuing a PhD in Machine Translation and Language Technologies at the
-          <a href="https://www.unimc.it" target="_blank">University of Macerata</a>, Italy.
-          My research focuses on evaluating MT and LLMs within crisis communication and high-stakes
-          domains such as public health.
-        </p>
-        <p class="subsec">Profile</p>
-        <div class="tags">
-          <span class="tag">Machine Translation</span>
-          <span class="tag">NLP</span>
-          <span class="tag">Crisis Communication</span>
-          <span class="tag">Healthcare Communication</span>
-          <span class="tag">Translation Technologies</span>
-        </div>
-        <ul class="blist">
-          <li>PhD Candidate in MT &amp; Language Technologies — <a href="https://www.unimc.it" target="_blank">University of Macerata</a></li>
-          <li>Research focus: evaluating MT and LLMs in crisis communication and public health domains</li>
-          <li>Investigating how language technologies perform in high-stakes, real-world scenarios</li>
-        </ul>
-        <p style="font-size:.92rem;color:#555;line-height:1.82;margin-top:.8rem;">
-          Previously, I completed studies in languages and linguistics, building a strong foundation in
-          translation theory and practice. I have experience working with multilingual content across a
-          range of domains, and I am particularly interested in how computational approaches can support
-          human communication in critical situations.
-        </p>
-        <p class="subsec">Contact</p>
-        <ul class="blist">
-          <li><a href="mailto:carmen-staiano@outlook.it">carmen-staiano@outlook.it</a></li>
-          <li><a href="mailto:m.staiano@unimc.it">m.staiano@unimc.it</a></li>
-        </ul>
-        <a class="cv-btn" href="#">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 16V4M6 10l6 6 6-6M4 20h16"/></svg>
-          Download Resume
+
+      <div class="social-row" aria-label="Social links">
+        <a href="https://www.linkedin.com/in/maria-carmen-staiano/" target="_blank" rel="noopener" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+        </a>
+        <a href="https://github.com/mcstaiano" target="_blank" rel="noopener" aria-label="GitHub">
+          <svg viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+        </a>
+        <a href="https://x.com/mc_staiano" target="_blank" rel="noopener" aria-label="Twitter / X">
+          <svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.746l7.73-8.835L1.254 2.25H8.08l4.253 5.622L18.244 2.25zm-1.161 17.52h1.833L7.084 4.126H5.117L17.083 19.77z"/></svg>
+        </a>
+        <a href="https://scholar.google.com/citations?user=0C0UXX4AAAAJ&hl=it" target="_blank" rel="noopener" aria-label="Google Scholar">
+          <svg viewBox="0 0 24 24"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 12.817 14.978 12 12 12c-2.977 0-5.548.817-6.758 1.769zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>
         </a>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- NEWS -->
-<section id="news" class="sec-bg-light">
-  <div class="wrap">
-    <p class="eyebrow">📣 News</p>
-    <h2 class="sec-title">Latest updates</h2>
-    <hr class="rule"/>
-    <div class="year-head">2026</div>
-    <div class="ni"><div class="ndot hollow"></div><div class="ndate">Coming · June</div><div class="nbody">Presenting research on MT evaluation in crisis contexts at upcoming academic events. Stay tuned!</div></div>
-    <div class="ni"><div class="ndot hollow"></div><div class="ndate">Coming soon</div><div class="nbody">Working on new submissions on LLM performance in <strong>healthcare</strong> and <strong>crisis communication</strong> domains.</div></div>
-    <div class="year-head">2025</div>
-    <div class="ni"><div class="ndot"></div><div class="ndate">Recent</div><div class="nbody"><strong>PhD started</strong> — Began doctoral research in Machine Translation and Language Technologies at the <a href="https://www.unimc.it" target="_blank">University of Macerata</a>, Italy.</div></div>
-    <div class="ni"><div class="ndot"></div><div class="ndate">Ongoing</div><div class="nbody">Conducting research on evaluation of MT and LLMs in <strong>crisis communication</strong> and <strong>public health</strong> domains.</div></div>
-    <div class="ni"><div class="ndot"></div><div class="ndate">Ongoing</div><div class="nbody">Exploring the intersection of <strong>translation technologies</strong> and <strong>NLP</strong> for high-stakes, real-world scenarios where accuracy and reliability are critical.</div></div>
-    <div class="year-head">2024</div>
-    <div class="ni"><div class="ndot"></div><div class="ndate">Recent</div><div class="nbody"><strong>Academic preparation</strong> — Completed preparatory work and research groundwork ahead of the PhD programme at the University of Macerata.</div></div>
-    <div class="ni"><div class="ndot"></div><div class="ndate">Earlier</div><div class="nbody">Developed expertise in translation theory and practice, multilingual communication, and computational linguistics — laying the foundation for doctoral research in MT and LLMs.</div></div>
-    <p style="font-size:.8rem;color:#bbb;padding-top:1.2rem;font-style:italic;">More updates will appear here as the research progresses…</p>
-  </div>
-</section>
+  <main>
+    <section class="content-section" id="about">
+      <div class="wrap">
+        <p class="section-kicker">about</p>
+        <h2 class="section-title">What you should know about me?</h2>
+        <hr class="soft-line" />
 
-<!-- RESEARCH -->
-<section id="research" class="sec-bg-white">
-  <div class="wrap">
-    <p class="eyebrow">Research</p>
-    <h2 class="sec-title">Publications</h2>
-    <hr class="rule"/>
-    <div class="pub">
-      <p class="pub-title">Evaluating Machine Translation and LLMs in Crisis Communication: A Framework for High-Stakes Domains</p>
-      <p class="pub-authors">M. C. Staiano</p>
-      <div class="pub-meta"><span class="pub-venue">University of Macerata — PhD Research in progress (2025–)</span></div>
-    </div>
-    <div class="pub">
-      <p class="pub-title">Large Language Models for Healthcare Communication: Challenges in MT Evaluation</p>
-      <p class="pub-authors">M. C. Staiano</p>
-      <div class="pub-meta"><span class="pub-venue">Work in progress</span></div>
-    </div>
-    <!--
-    <div class="pub">
-      <p class="pub-title">Your Paper Title Here</p>
-      <p class="pub-authors">M. C. Staiano, Co-Author Name</p>
-      <div class="pub-meta">
-        <span class="pub-venue">Conference Name (Year)</span>
-        <a href="#" class="pub-link">Article</a>
-        <a href="#" class="pub-link">Poster</a>
+        <div class="about-grid">
+          <div class="profile-photo">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg>
+            <span>Add your photo</span>
+            <span style="opacity:.65;font-size:12px;">Replace this box with an img tag</span>
+          </div>
+
+          <div>
+            <p class="lead">
+              I am currently pursuing a PhD in Machine Translation and Language Technologies at the University of Macerata, Italy.
+            </p>
+            <p class="body-text">
+              My doctoral research focuses on evaluating Machine Translation (MT) and Large Language Models (LLMs) within crisis communication and other high-stakes domains, such as public health.
+            </p>
+
+            <p class="mini-heading">profile</p>
+            <p class="body-text">
+              I'm a PhD Candidate at <a href="https://www.unimc.it" target="_blank" rel="noopener">University of Macerata</a>, Italy, working on Machine Translation and Language Technologies for crisis and healthcare communication.
+            </p>
+
+            <div class="tag-list">
+              <span class="tag">Machine Translation</span>
+              <span class="tag">NLP</span>
+              <span class="tag">Crisis Communication</span>
+              <span class="tag">Healthcare Communication</span>
+              <span class="tag">Translation Technologies</span>
+            </div>
+
+            <ul class="bullet-list">
+              <li>PhD Candidate in Machine Translation &amp; Language Technologies â€” <a href="https://www.unimc.it" target="_blank" rel="noopener">University of Macerata</a></li>
+              <li>Research focus: evaluating MT and LLMs in crisis communication and public health high-stakes domains</li>
+              <li>Investigating how language technologies perform in real-world critical scenarios</li>
+            </ul>
+
+            <p class="body-text">
+              Previously, I completed my studies in languages and linguistics, developing a strong foundation in translation theory and practice. I have experience working with multilingual content across a range of domains, and I am particularly interested in how computational approaches can support human communication in critical situations.
+            </p>
+
+            <p class="mini-heading">contact</p>
+            <ul class="bullet-list">
+              <li><a href="mailto:carmen-staiano@outlook.it">carmen-staiano@outlook.it</a></li>
+              <li><a href="mailto:m.staiano@unimc.it">m.staiano@unimc.it</a></li>
+            </ul>
+
+            <a class="button-link" href="#">â¬‡ Download CV</a>
+          </div>
+        </div>
       </div>
-    </div>
-    -->
-    <p style="margin-top:1.6rem;font-size:.88rem;color:#aaa;">
-      Full profile on <a href="https://scholar.google.com/citations?user=0C0UXX4AAAAJ&hl=it" target="_blank" style="color:var(--accent2);font-weight:700;">Google Scholar →</a>
+    </section>
+
+    <section class="content-section" id="news">
+      <div class="wrap">
+        <p class="section-kicker">news</p>
+        <h2 class="section-title">Latest updates</h2>
+        <hr class="soft-line" />
+
+        <h3 class="year-title">2026</h3>
+        <div class="news-item">
+          <div class="news-date future">Coming in June</div>
+          <div class="news-body">Presenting research on MT evaluation in crisis contexts at upcoming academic events. Stay tuned for updates!</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date future">Coming soon</div>
+          <div class="news-body">Working on new submissions on LLM performance in healthcare and crisis communication domains.</div>
+        </div>
+
+        <h3 class="year-title">2025</h3>
+        <div class="news-item">
+          <div class="news-date">Recent</div>
+          <div class="news-body"><strong>PhD started</strong> â€” Began doctoral research in Machine Translation and Language Technologies at the <a href="https://www.unimc.it" target="_blank" rel="noopener">University of Macerata</a>, Italy.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Ongoing</div>
+          <div class="news-body">Conducting research on evaluation of Machine Translation (MT) and Large Language Models (LLMs) in <strong>crisis communication</strong> and <strong>public health</strong> domains.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Ongoing</div>
+          <div class="news-body">Exploring the intersection of <strong>translation technologies</strong> and <strong>natural language processing</strong> for high-stakes, real-world scenarios where accuracy and reliability are critical.</div>
+        </div>
+
+        <h3 class="year-title">2024</h3>
+        <div class="news-item">
+          <div class="news-date">Recent</div>
+          <div class="news-body"><strong>Academic preparation</strong> â€” Completed preparatory work and research groundwork ahead of the PhD programme at the University of Macerata.</div>
+        </div>
+        <div class="news-item">
+          <div class="news-date">Earlier</div>
+          <div class="news-body">Developed strong expertise in translation theory and practice, multilingual communication, and computational linguistics â€” laying the foundation for doctoral research in MT and LLMs.</div>
+        </div>
+
+        <p class="body-text" style="margin-top:22px;font-style:italic;">More updates will appear here as the research progressesâ€¦</p>
+      </div>
+    </section>
+
+    <section class="content-section" id="research">
+      <div class="wrap">
+        <p class="section-kicker">research</p>
+        <h2 class="section-title">Publications</h2>
+        <hr class="soft-line" />
+
+        <article class="publication">
+          <h3 class="pub-title">Evaluating Machine Translation and LLMs in Crisis Communication: A Framework for High-Stakes Domains</h3>
+          <p class="pub-author">M. C. Staiano</p>
+          <div class="pub-meta">
+            <span>University of Macerata â€” PhD Research in progress (2025â€“)</span>
+          </div>
+        </article>
+
+        <article class="publication">
+          <h3 class="pub-title">Large Language Models for Healthcare Communication: Challenges in MT Evaluation</h3>
+          <p class="pub-author">M. C. Staiano</p>
+          <div class="pub-meta">
+            <span>Work in progress</span>
+          </div>
+        </article>
+
+        <p class="body-text" style="margin-top:26px;">Full profile on <a href="https://scholar.google.com/citations?user=0C0UXX4AAAAJ&hl=it" target="_blank" rel="noopener">Google Scholar â†’</a></p>
+      </div>
+    </section>
+
+    <section class="content-section" id="community">
+      <div class="wrap">
+        <p class="section-kicker" style="text-align:center;">community</p>
+        <p class="community-quote">â€œEducating the mind without educating the heart is no education at allâ€</p>
+        <p class="community-subtitle">Trying to create a positive impact in the world</p>
+        <hr class="soft-line" />
+
+        <p class="body-text">
+          Outside academia, I am passionate about the social dimensions of language and technology. My research is driven by the belief that machine translation and language technologies should be accessible, reliable, and beneficial for everyone â€” especially in critical moments such as emergencies, crises, and healthcare situations.
+        </p>
+        <p class="body-text">
+          I am committed to bridging the gap between cutting-edge research and real-world needs, and to making language technology work for those who need it most.
+        </p>
+        <p class="body-text">If you'd like to collaborate, discuss ideas, or exchange experiences â€” feel free to reach out!</p>
+
+        <div class="carousel" id="carousel">
+          <button class="carousel-btn prev" type="button" onclick="moveSlide(-1)" aria-label="Previous slide">â€¹</button>
+          <button class="carousel-btn next" type="button" onclick="moveSlide(1)" aria-label="Next slide">â€º</button>
+
+          <div class="carousel-track" id="carouselTrack">
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
+              </div>
+              <div class="carousel-caption">Conference &amp; Research | Presenting work at academic venues</div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+              </div>
+              <div class="carousel-caption">Teaching &amp; Workshops | Sharing knowledge beyond the university</div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
+              </div>
+              <div class="carousel-caption">Language &amp; Community | Connecting translation tech with real-world needs</div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+              </div>
+              <div class="carousel-caption">Crisis Communication Research | Language tech for emergency scenarios</div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
+              </div>
+              <div class="carousel-caption">Healthcare Communication | MT evaluation in medical domains</div>
+            </div>
+
+            <div class="carousel-slide">
+              <div class="carousel-images">
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
+                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
+              </div>
+              <div class="carousel-caption">University of Macerata | Academic life and research environment</div>
+            </div>
+          </div>
+
+          <div class="dots" id="dots"></div>
+          <div class="slide-count" id="slideCount">1 / 6</div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      <a href="mailto:carmen-staiano@outlook.it">carmen-staiano@outlook.it</a>
+      &nbsp;|&nbsp;
+      <a href="mailto:m.staiano@unimc.it">m.staiano@unimc.it</a>
     </p>
-  </div>
-</section>
+    <p style="margin-top:8px;">Â© Maria Carmen Staiano Â· University of Macerata</p>
+  </footer>
 
-<!-- COMMUNITY -->
-<section id="community" class="sec-bg-light">
-  <div class="wrap">
-    <p class="eyebrow" style="text-align:center">Community, Volunteering &amp; Some Results</p>
-    <p class="cquote">"Educating the mind without educating the heart is no education at all"</p>
-    <p class="cquote-attr">Trying to create a positive impact in the world</p>
-    <hr class="rule"/>
-    <p class="cbody">Outside academia, I am passionate about the social dimensions of language and technology. My research is driven by the belief that machine translation and language technologies should be accessible, reliable, and beneficial for everyone — especially in critical moments such as emergencies, crises, and healthcare situations.</p>
-    <p class="cbody">I am committed to bridging the gap between cutting-edge research and real-world needs, and to making language technology work for those who need it most.</p>
-    <p class="cbody">If you'd like to collaborate, discuss ideas, or exchange experiences — feel free to reach out!</p>
+  <script>
+    function toggleTheme() {
+      const root = document.documentElement;
+      const button = document.querySelector('.theme-btn');
+      const isDark = root.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        root.removeAttribute('data-theme');
+        button.textContent = 'â˜¾ dark';
+      } else {
+        root.setAttribute('data-theme', 'dark');
+        button.textContent = 'â˜€ light';
+      }
+    }
 
-    <div class="car" id="car">
-      <button class="cbtn p" onclick="cMove(-1)" aria-label="Previous">&#8249;</button>
-      <button class="cbtn n" onclick="cMove(1)" aria-label="Next">&#8250;</button>
-      <div class="ctrack" id="ctrack">
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
-        </div><div class="ccap">Conference &amp; Research | Presenting work at academic venues</div></div>
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-        </div><div class="ccap">Teaching &amp; Workshops | Sharing knowledge beyond the university</div></div>
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
-        </div><div class="ccap">Language &amp; Community | Connecting translation tech with real-world needs</div></div>
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-        </div><div class="ccap">Crisis Communication Research | Language tech for emergency scenarios</div></div>
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
-        </div><div class="ccap">Healthcare Communication | MT evaluation in medical domains</div></div>
-        <div class="cslide"><div class="cimgs">
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 1</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 2</span></div>
-          <div class="cph"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span>Photo 3</span></div>
-        </div><div class="ccap">University of Macerata | Academic life and research environment</div></div>
-      </div>
-      <div class="cdots" id="cdots"></div>
-      <div class="ccount" id="ccount">1 / 6</div>
-    </div>
-  </div>
-</section>
+    let currentSlide = 0;
+    const track = document.getElementById('carouselTrack');
+    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
+    const dotsWrap = document.getElementById('dots');
+    const slideCount = document.getElementById('slideCount');
+    const totalSlides = slides.length;
 
-<!-- FOOTER -->
-<footer>
-  <p>
-    <a href="mailto:carmen-staiano@outlook.it">carmen-staiano@outlook.it</a>
-    &nbsp;·&nbsp;
-    <a href="mailto:m.staiano@unimc.it">m.staiano@unimc.it</a>
-  </p>
-  <p style="margin-top:.4rem">© Maria Carmen Staiano &nbsp;·&nbsp; University of Macerata</p>
-</footer>
+    slides.forEach((_, index) => {
+      const dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'dot' + (index === 0 ? ' active' : '');
+      dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
+      dot.addEventListener('click', () => goToSlide(index));
+      dotsWrap.appendChild(dot);
+    });
 
-<script>
-let isDark = true;
-function toggleTheme() {
-  isDark = !isDark;
-  const btn = document.getElementById('tbtn');
-  if (isDark) {
-    document.body.style.background = '';
-    document.documentElement.removeAttribute('data-theme');
-    btn.textContent = '☽ dark';
-    document.querySelectorAll('nav a').forEach(a => a.style.color = '');
-  } else {
-    document.documentElement.setAttribute('data-theme', 'light');
-    btn.textContent = '☀ light';
-  }
-}
+    function goToSlide(index) {
+      currentSlide = (index + totalSlides) % totalSlides;
+      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
+      dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
+        dot.classList.toggle('active', i === currentSlide);
+      });
+      slideCount.textContent = (currentSlide + 1) + ' / ' + totalSlides;
+    }
 
-let cur = 0;
-const track = document.getElementById('ctrack');
-const slides = track.querySelectorAll('.cslide');
-const dotsW = document.getElementById('cdots');
-const countEl = document.getElementById('ccount');
-const total = slides.length;
-slides.forEach((_,i) => {
-  const d = document.createElement('button');
-  d.className = 'cd' + (i===0?' on':'');
-  d.setAttribute('aria-label', 'Slide '+(i+1));
-  d.onclick = () => goTo(i);
-  dotsW.appendChild(d);
-});
-function goTo(n) {
-  cur = (n+total)%total;
-  track.style.transform = 'translateX(-'+cur*100+'%)';
-  dotsW.querySelectorAll('.cd').forEach((d,i)=>d.classList.toggle('on',i===cur));
-  countEl.textContent = (cur+1)+' / '+total;
-}
-function cMove(d) { goTo(cur+d); }
-setInterval(()=>cMove(1), 5500);
-</script>
+    function moveSlide(direction) {
+      goToSlide(currentSlide + direction);
+    }
+
+    setInterval(() => moveSlide(1), 5200);
+  </script>
 </body>
 </html>
