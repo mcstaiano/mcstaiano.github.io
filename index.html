@@ -774,7 +774,80 @@
     .icon-link svg { width: 22px; height: 22px; }
     .icon-link svg.fill { fill: currentColor; }
     .icon-link svg.line { fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
-  </style>
+  
+/* Teaching */
+.talk-row{display:grid;grid-template-columns:120px 1fr;gap:25px;padding:24px 0;border-bottom:1px solid var(--line)}.talk-date{color:var(--accent);font-size:13px}.talk-row h3{font-size:20px;line-height:1.4;margin-bottom:8px}.talk-row p{color:var(--muted);margin-bottom:8px}@media(max-width:760px){.talk-row{grid-template-columns:1fr;gap:8px}}
+
+/* About and Latest updates, inspired by the reference portfolio */
+.about-updates-wrap{width:min(100%,1200px);margin:0 auto;display:grid;grid-template-columns:1.05fr 1fr;gap:30px;align-items:start}
+.about-panel,.updates-panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:30px}
+.about-panel .about-grid{display:flex;flex-direction:column;align-items:flex-start;border:0;background:transparent;box-shadow:none;padding:0;gap:24px}
+.about-panel .profile-photo{margin:0;width:160px;height:160px}
+.about-panel .lead{font-size:18px;line-height:1.75;font-weight:400}
+.about-panel .soft-line{margin-bottom:24px}
+.updates-title{font-family:var(--serif);font-size:36px;font-weight:400;line-height:1.2;margin-bottom:20px}
+.updates-scroll{max-height:570px;overflow-y:auto;padding-right:16px;scrollbar-width:thin;scrollbar-color:var(--accent) transparent;overscroll-behavior-y:auto}
+.updates-scroll:focus-visible{outline:2px solid var(--accent);outline-offset:6px}
+.updates-scroll .year-title{font-size:21px;margin:24px 0 8px;padding-bottom:8px;border-bottom:1px solid var(--line)}
+.updates-scroll .year-title:first-child{margin-top:0}
+.updates-scroll .news-item{grid-template-columns:80px minmax(0,1fr);gap:14px;padding:15px 0}
+.updates-scroll .news-date{font-family:var(--sans);font-size:12px;letter-spacing:0}
+.updates-scroll .news-body{font-size:14px;line-height:1.7}
+.updates-scroll .news-body a{font-weight:500}
+.updates-scroll::-webkit-scrollbar{width:5px}.updates-scroll::-webkit-scrollbar-thumb{background:var(--accent);border-radius:10px}
+@media(max-width:900px){.about-updates-wrap{grid-template-columns:1fr}.updates-scroll{max-height:480px}}
+@media(max-width:760px){.about-panel,.updates-panel{padding:24px}.updates-scroll .news-item{grid-template-columns:1fr;gap:5px}.updates-title{font-size:32px}}
+
+/* Profile panel inspired by the reference About layout */
+.profile-title{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1.2;margin:0 0 24px}
+.about-panel>.profile-photo{width:170px;height:170px;margin:0 auto 24px;border-radius:14px;border:0;box-shadow:none}
+.profile-subtitle{font-size:21px;margin-bottom:12px}.previous-experience{font-size:13px;color:var(--text);line-height:1.7;margin-bottom:20px}.previous-experience>span{display:block;text-transform:uppercase;font-size:10px;letter-spacing:.13em;color:var(--muted);margin-bottom:5px}
+.profile-bio{font-size:15px;line-height:1.8;color:var(--muted);margin-bottom:16px}
+.profile-topics{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 24px}.profile-topics span{font-size:11px;line-height:1.5;padding:6px 10px;border-radius:6px;background:var(--accent-soft);color:var(--accent)}
+.profile-highlights{list-style:none;border-top:1px solid var(--line);padding-top:18px;display:grid;gap:15px}.profile-highlights li{display:grid;grid-template-columns:85px 1fr;gap:14px;font-size:13px;line-height:1.65}.profile-highlights strong{color:var(--accent);font-weight:500}.profile-highlights span{color:var(--muted)}
+.profile-background{font-size:13px;line-height:1.75;color:var(--muted);border-top:1px solid var(--line);padding-top:18px;margin-top:22px}.profile-cv{display:inline-flex;margin-top:20px;font-size:13px;font-weight:500;border:1px solid var(--accent);border-radius:7px;padding:10px 15px}
+@media(max-width:400px){.profile-highlights li{grid-template-columns:1fr;gap:3px}}
+
+/* Updates below About */
+.about-updates-wrap{grid-template-columns:1fr;max-width:920px}.updates-panel{width:100%}
+
+/* Final section matching the supplied three-column reference */
+#community .engagement-wrap{width:min(100%,1120px)}
+#community .engagement-title{font-family:var(--serif);font-size:clamp(32px,4vw,44px);font-weight:400;line-height:1.2;margin-bottom:5px}
+#community .engagement-subtitle{font-family:var(--serif);font-size:25px;line-height:1.3;margin-bottom:14px}
+#community .engagement-intro{color:var(--muted);font-size:15px;line-height:1.7;max-width:950px;margin-bottom:24px}
+#community .engagement-columns{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line);padding-top:24px}
+#community .engagement-column{padding:0 24px;display:flex;flex-direction:column;min-width:0;border-right:1px solid var(--line)}
+#community .engagement-column:first-child{padding-left:0}#community .engagement-column:last-child{padding-right:0;border-right:0}
+#community .engagement-column h3{font-family:var(--serif);font-size:25px;font-weight:400;line-height:1.2;margin-bottom:10px}
+#community .engagement-column>p{font-size:14px;line-height:1.65;color:var(--muted);margin-bottom:18px}
+#community .engagement-column figure{margin-top:auto}
+#community .engagement-photo{aspect-ratio:1.9;overflow:hidden;border-radius:3px;background:var(--surface-2)}
+#community .engagement-photo img{display:block;width:100%;height:100%;object-fit:cover}
+#community [hidden]{display:none!important}
+#community .engagement-photo-placeholder{height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;color:var(--muted);font-size:12px;padding:16px;text-align:center;background:linear-gradient(135deg,var(--surface-2),var(--accent-soft))}
+#community .engagement-photo-placeholder svg{width:44px;height:34px}
+#community figcaption{font-size:11px;line-height:1.6;color:var(--muted);margin-top:8px}
+#community .engagement-connect{display:flex;align-items:center;flex-wrap:wrap;gap:16px 28px;border-top:1px solid var(--line);padding-top:20px;margin-top:25px;font-size:13px}
+#community .engagement-connect strong{margin-right:auto}#community .engagement-connect a{font-weight:400}
+@media(max-width:760px){#community .engagement-columns{grid-template-columns:1fr;gap:24px}#community .engagement-column,#community .engagement-column:first-child,#community .engagement-column:last-child{padding:0 0 24px;border-right:0;border-bottom:1px solid var(--line)}#community .engagement-column:last-child{border-bottom:0}#community .engagement-connect strong{width:100%}}
+
+/* Left-aligned profile photo in About */
+.about-panel>.profile-photo{margin:0 0 24px 0}
+
+/* About profile layout matching the supplied reference */
+.about-panel{display:flow-root}
+.about-panel>.profile-photo{float:left;width:180px;height:180px;margin:0 30px 20px 0;border-radius:50%;border:7px solid var(--surface-2);box-shadow:0 0 0 5px var(--bg)}
+.about-panel>.profile-photo img{object-fit:cover;border-radius:50%}
+.profile-subtitle{padding-top:3px;color:var(--accent);font-size:13px;text-transform:uppercase;letter-spacing:.16em;margin-bottom:16px}
+.previous-experience{margin-bottom:16px}.previous-experience>span{display:inline;margin-right:10px}
+.profile-topics{clear:both;padding-top:8px}
+.profile-topics span{border:1px solid var(--accent);background:transparent;border-radius:999px}
+.profile-highlights{clear:both;grid-template-columns:repeat(2,minmax(0,1fr));gap:0 28px;margin-top:26px}
+.profile-highlights li{padding:16px 0;border-bottom:1px solid var(--line)}
+@media(max-width:600px){.about-panel>.profile-photo{width:130px;height:130px;margin-right:20px}.profile-highlights{grid-template-columns:1fr}}
+@media(max-width:400px){.about-panel>.profile-photo{float:none;margin:0 0 22px;width:150px;height:150px}}
+</style>
 </head>
 
 <body>
@@ -783,7 +856,7 @@
   <nav class="top-nav" aria-label="Primary navigation">
     <a class="brand" href="#home" aria-label="Maria Carmen Staiano home">MCS.</a>
     <div class="nav-links">
-      <a href="#about">About</a><a href="#news">News</a><a href="#selected-research">Research</a><a href="#research">Publications</a><a href="#community">Community</a><a href="#contact">Contact</a>
+      <a href="#about">About</a><a href="#news">News</a><a href="#research">Research</a><a href="#teaching">Teaching</a><a href="#community">Community</a>
       <button class="theme-btn" type="button" onclick="toggleTheme()" aria-label="Switch to dark theme" aria-pressed="false">☼</button>
     </div>
   </nav>
@@ -796,7 +869,7 @@
         <div class="hero-rule" aria-hidden="true"></div>
         <p class="hero-description">I study how Machine Translation systems and Large Language Models can support reliable, human-centered multilingual communication in crisis response and public health.</p>
         <div class="hero-actions">
-          <a class="primary-action" href="#selected-research">Explore my research <span aria-hidden="true">→</span></a>
+          <a class="primary-action" href="#research">Explore my research <span aria-hidden="true">→</span></a>
           <!-- Add your CV as cv.pdf beside index.html, or change this path. -->
           <a class="secondary-action" href="cv.pdf" download>Download CV</a>
         </div>
@@ -813,9 +886,6 @@
           <a class="icon-link" href="https://x.com/mc_staiano" target="_blank" rel="noopener" aria-label="X (Twitter)" title="X (Twitter)">
             <svg class="fill" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.901 1.153h3.68l-8.04 9.19L24 22.846h-7.406l-5.8-7.584-6.638 7.584H.474l8.6-9.83L0 1.154h7.594l5.243 6.932ZM17.61 20.644h2.039L6.486 3.24H4.298Z"/></svg>
           </a>
-          <a class="icon-link" href="mailto:carmen-staiano@outlook.it" aria-label="Personal email" title="carmen-staiano@outlook.it">
-            <svg class="line" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
-          </a>
         </div>
       </div>
       <figure class="hero-art" role="img" aria-label="The Tower of Babel by Pieter Bruegel the Elder"></figure>
@@ -823,38 +893,13 @@
   </header>
 
   <main id="main-content">
-    <section class="selected-research" id="selected-research" aria-labelledby="selected-title">
-      <div class="selected-heading"><h2 id="selected-title">Selected research</h2><a href="#research">View all publications <span aria-hidden="true">→</span></a></div>
-      <div class="project-grid">
-        <article class="project-card"><span class="project-number">01</span><h3>ITALERT</h3><p>Evaluating machine translation for emergency communication.</p><a href="https://aclanthology.org/2025.mtsummit-1.43/" target="_blank" rel="noopener">Read paper →</a></article>
-        <article class="project-card"><span class="project-number">02</span><h3>SIREN</h3><p>Assessing actionability in crisis translation.</p><a href="mailto:m.staiano@unimc.it?subject=SIREN%20research">Ask about the project →</a></article>
-        <article class="project-card"><span class="project-number">03</span><h3>HIPs Terminology</h3><p>Multilingual terminology for disaster risk reduction.</p><a href="https://acl-bg.org/proceedings/2026/NeTTIT%202026/pdf/2026.nettit-1.26.pdf" target="_blank" rel="noopener">Read paper →</a></article>
-      </div>
-    </section>
+    
 
-    <section class="content-section" id="about">
-      <div class="wrap">
-        <p class="section-kicker">about</p>
-        <hr class="soft-line" />
-
-        <div class="about-grid">
-          <figure class="profile-photo">
-            <img src="profile-photo.png" alt="Maria Carmen Staiano profile photo" loading="lazy" />
-          </figure>
-
-          <div>
-            <p class="lead">
-              Hi, I'm Maria Carmen, originally from Naples in Southern Italy. Over the course of my academic and professional journey, I have studied and worked in several countries, including Switzerland, Germany, Spain, and Ireland. I am passionate about foreign languages and artificial intelligence, particularly its impact on society.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="news">
-      <div class="wrap">
-        <p class="section-kicker">news</p>
-        <h2 class="section-title">Latest updates</h2>
-        <hr class="soft-line" />
+    <section class="content-section" id="about"><div class="about-updates-wrap"><div class="about-panel"><p class="section-kicker">About</p><h2 class="profile-title">A bit about me</h2><figure class="profile-photo"><img src="profile-photo.png" alt="Maria Carmen Staiano" loading="lazy"></figure><h3 class="profile-subtitle">Profile</h3><p class="previous-experience"><span>Previously at</span> Apple AIML · European Parliament · UNDRR</p><p class="profile-bio">
+              Hi, I'm Maria Carmen, originally from Naples in Southern Italy. Over the course of my academic and professional journey, I have studied and worked in several countries, including Switzerland, Germany, Spain, and Ireland. I am passionate about foreign languages and artificial intelligence, particularly its impact on society.</p><p class="profile-bio">I am a PhD researcher in Humanities and Technologies at the University of Macerata, supervised by Francesca Chiusaroli and Johanna Monti. My research explores machine translation and large language models for crisis communication, with a focus on translation quality, actionability and multilingual terminology.</p><div class="profile-topics" aria-label="Research interests"><span>Crisis communication</span><span>Machine translation</span><span>LLM evaluation</span><span>Multilingual terminology</span></div><ul class="profile-highlights"><li><strong>Research</strong><span>Translation evaluation and language technologies for emergency communication.</span></li><li><strong>UNDRR</strong><span>Public Information Internship in Bonn, with research on multilingual Hazard Information Profiles.</span></li><li><strong>Teaching</strong><span>Language technology teaching activities at the University of Naples L’Orientale.</span></li><li><strong>Community</strong><span>Mentoring, outreach and volunteer translation.</span></li></ul><p class="profile-background">I hold a BA in Linguistic and Cultural Mediation and an MA in Specialised Translation from the University of Naples L’Orientale.</p><a class="profile-cv" href="mailto:m.staiano@unimc.it?subject=Academic%20CV%20request">Request my academic CV →</a></div><aside class="updates-panel" id="news" aria-labelledby="updates-title">
+        
+        <h2 class="updates-title" id="updates-title">Latest updates</h2><div class="updates-scroll" tabindex="0" role="region" aria-labelledby="updates-title">
+        
 
         <h3 class="year-title">2026</h3>
         <div class="news-item">
@@ -935,13 +980,14 @@
           <div class="news-date">October</div>
           <div class="news-body">Left my job at <a href="https://www.apple.com/" target="_blank" rel="noopener">Apple</a> in Barcelona in the AIML Data Operations Department and moved back to Italy.</div>
         </div>
-      </div>
-    </section>
+      </div></aside></div></section>
+
+    
 
     <section class="content-section" id="research">
       <div class="wrap">
         <p class="section-kicker">research</p>
-        <h2 class="section-title">Publications</h2>
+        <h2 class="section-title">Research &amp; publications</h2>
         <hr class="soft-line" />
 
         <article class="publication">
@@ -984,82 +1030,8 @@
       </div>
     </section>
 
-    <section class="content-section" id="community">
-      <div class="wrap">
-        <p class="section-kicker" style="text-align:center;">community</p>
-        <p class="community-quote">Community engagement</p>
-        <p class="community-subtitle">Trying to create a positive impact in the world</p>
-        <hr class="soft-line" />
-
-        <p class="body-text">
-          Outside academia, I am passionate about the social dimensions of language and technology. My research is driven by the belief that machine translation and language technologies should be accessible, reliable, and designed with real users in mind.</p>
-        <p class="body-text">
-          I am committed to bridging the gap between cutting-edge research and real-world needs, and to making language technology work for those who need it most.</p>
-        <p class="body-text">If you'd like to collaborate, discuss ideas, or exchange experiences - feel free to reach out!</p>
-
-        <div class="carousel" id="carousel">
-          <button class="carousel-btn prev" type="button" onclick="moveSlide(-1)" aria-label="Previous slide">&lt;</button>
-          <button class="carousel-btn next" type="button" onclick="moveSlide(1)" aria-label="Next slide">&gt;</button>
-
-          <div class="carousel-track" id="carouselTrack">
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">Conference &amp; Research | Presenting work at academic venues</div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">Teaching &amp; Workshops | Sharing knowledge beyond the university</div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">Language &amp; Community | Connecting translation tech with real-world needs</div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">Crisis Communication Research | Language tech for emergency scenarios</div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">Healthcare Communication | MT evaluation in medical domains</div>
-            </div>
-
-            <div class="carousel-slide">
-              <div class="carousel-images">
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-                <div class="photo-placeholder"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
-              </div>
-              <div class="carousel-caption">University of Macerata | Academic life and research environment</div>
-            </div>
-          </div>
-
-          <div class="dots" id="dots"></div>
-          <div class="slide-count" id="slideCount">1 / 6</div>
-        </div>
-      </div>
-    </section>
+    <section class="content-section" id="teaching"><div class="wrap"><p class="section-kicker">Teaching</p><h2 class="section-title">Teaching &amp; workshops</h2><p class="body-text">Sharing knowledge about translation and language technologies.</p><div class="talk-list"><article class="talk-row"><span class="talk-date">2024–2026</span><div><h3>Language Technologies</h3><p>University of Naples L’Orientale</p><p>Teaching activities as Cultore della Materia, including laboratory sessions and oral examinations.</p></div></article><article class="talk-row"><span class="talk-date">May 2026</span><div><h3>Machine translation literacy &amp; prompt engineering</h3><p>United Nations Office for Disaster Risk Reduction (UNDRR)</p><p>Internal training on the use of machine translation and large language models for risk communication.</p></div></article><article class="talk-row"><span class="talk-date">April 2026</span><div><h3>Career paths in the language industry</h3><p>University of Naples L’Orientale</p><p>Guest talk for Master’s students in Translation.</p></div></article><article class="talk-row"><span class="talk-date">December 2025</span><div><h3>Guest lecture in Specialised Translation</h3><p>University of Naples L’Orientale</p></div></article><article class="talk-row"><span class="talk-date">November 2024</span><div><h3>Language in Society Colloquium</h3><p>European University Viadrina</p><p>Guest lecture within the colloquium led by Britta Schneider.</p></div></article></div></div></section>
+<section class="content-section" id="community"><div class="wrap engagement-wrap"><h2 class="engagement-title">Teaching &amp; engagement</h2><p class="engagement-subtitle">Sharing knowledge. Connecting communities.</p><p class="engagement-intro">I am committed to teaching, outreach and collaborative initiatives that bridge research, practice and society. Through teaching, mentoring and public engagement, I aim to contribute to more inclusive and informed conversations about language and technology.</p><div class="engagement-columns"><article class="engagement-column"><h3>Teaching & workshops</h3><p>I share my research through talks and interviews on translation, language technologies and crisis communication.</p><figure><div class="engagement-photo"><img src="teaching.jpg" alt="Talks and interviews" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="engagement-photo-placeholder" hidden><svg viewBox="0 0 48 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="44" height="32" rx="3"/><circle cx="15" cy="12" r="4"/><path d="M3 30l13-12 9 8 9-14 12 18"/></svg><span>Talks and interviews</span></div></div><figcaption>Talks and interviews on translation and language technologies.</figcaption></figure></article><article class="engagement-column"><h3>Outreach & mentoring</h3><p>As a mentor in the Women in Localization Mentoring Program, I support language professionals in their professional development, sharing experience and perspectives on translation and language technologies.</p><figure><div class="engagement-photo"><img src="outreach.jpg" alt="Women in Localization Mentoring Program" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="engagement-photo-placeholder" hidden><svg viewBox="0 0 48 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="44" height="32" rx="3"/><circle cx="15" cy="12" r="4"/><path d="M3 30l13-12 9 8 9-14 12 18"/></svg><span>Women in Localization Mentoring Program</span></div></div><figcaption>Women in Localization Mentoring Program.</figcaption></figure></article><article class="engagement-column"><h3>Academic service</h3><p>I contribute to the academic community through peer review and programme committees, supporting collaborative research and the exchange of knowledge.</p><figure><div class="engagement-photo"><img src="academic-service.jpg" alt="Academic service" loading="lazy" onerror="this.hidden=true;this.nextElementSibling.hidden=false"><div class="engagement-photo-placeholder" hidden><svg viewBox="0 0 48 36" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><rect x="2" y="2" width="44" height="32" rx="3"/><circle cx="15" cy="12" r="4"/><path d="M3 30l13-12 9 8 9-14 12 18"/></svg><span>Academic service</span></div></div><figcaption>Participation in the research community.</figcaption></figure></article></div><div class="engagement-connect"><strong>Let’s connect</strong><a href="mailto:m.staiano@unimc.it">Email ↗</a><a href="https://scholar.google.com/citations?user=0C0UXX4AAAAJ&amp;hl=it" target="_blank" rel="noopener">Google Scholar ↗</a><a href="https://github.com/mcstaiano" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/maria-carmen-staiano/" target="_blank" rel="noopener">LinkedIn ↗</a></div><!-- Add teaching.jpg, outreach.jpg and academic-service.jpg beside index.html. --></div></section>
   </main>
 
   <footer id="contact">
@@ -1086,34 +1058,6 @@
     }
     try { setTheme(localStorage.getItem('theme') === 'dark'); } catch (_) { setTheme(false); }
 
-    let currentSlide = 0;
-    const track = document.getElementById('carouselTrack');
-    const slides = Array.from(track.querySelectorAll('.carousel-slide'));
-    const dotsWrap = document.getElementById('dots');
-    const slideCount = document.getElementById('slideCount');
-    const totalSlides = slides.length;
-
-    slides.forEach((_, index) => {
-      const dot = document.createElement('button');
-      dot.type = 'button';
-      dot.className = 'dot' + (index === 0 ? ' active' : '');
-      dot.setAttribute('aria-label', 'Go to slide ' + (index + 1));
-      dot.addEventListener('click', () => goToSlide(index));
-      dotsWrap.appendChild(dot);
-    });
-
-    function goToSlide(index) {
-      currentSlide = (index + totalSlides) % totalSlides;
-      track.style.transform = 'translateX(-' + (currentSlide * 100) + '%)';
-      dotsWrap.querySelectorAll('.dot').forEach((dot, i) => {
-        dot.classList.toggle('active', i === currentSlide);
-      });
-      slideCount.textContent = (currentSlide + 1) + ' / ' + totalSlides;
-    }
-
-    function moveSlide(direction) {
-      goToSlide(currentSlide + direction);
-    }
   </script>
 </body>
 </html>
